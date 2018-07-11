@@ -40,7 +40,8 @@ projectExternalId = '{!copado__Project__c.External_Id__c}',
 workspaceId = '{!copado__Project__c.Workspace_Id__c}',
 projectId = '{!copado__Project__c.Id}';
 
-
+//20180710: PRAM01: global var to avoid requery 
+var listOfOrgEnv;
 /**************************************************************************************************************
  * Copado Adapter to JIRA
  * 
@@ -50,8 +51,7 @@ projectId = '{!copado__Project__c.Id}';
  * If you want to write your custom adapter, you will only have to extend this object and overide the methods you need.
  * @type {Object}
  */
-var copadoJIRAAdapter = {
-
+var copadoJIRAAdapter = {	
     /**
      * This method should return the body data to send in POST messages. 
      * @return {[type]} [description]
@@ -171,6 +171,19 @@ var copadoJIRAAdapter = {
         return tmpResults;
     },
     /**
+     * 
+     * This method extract Enviroment Id and Org Credential Id
+     * @param  {[type]} string [Org Name]
+     * @return {[type]} obj [object from Org__c with fields Id,copado__Environment__c,Name]
+     */
+    getOrgEnv: function(orgName){
+        if(typeof listOfOrgEnv == "undefined"){
+            var query = 'SELECT Id,copado__Environment__c,Name FROM '+app.conf.ns+'Org__c';
+            listOfOrgEnv = sforce.connection.query(query).getArray('records'); 
+        }
+        return listOfOrgEnv.filter(obj => {return obj.Name==orgName});
+    },
+    /**
      * FIELD MAPPINGS - JIRA
      * This method should transform the API issue to a Copado User Story
      * Notice that the Copado object should contain the package namespace
@@ -193,14 +206,20 @@ var copadoJIRAAdapter = {
             us[app.conf.ns+'Status__c'] = obj.fields.status.name;
             us[app.conf.ns+'Project__c'] = app.data.projectId;
             us[app.conf.ns+'Functional_Specifications__c'] = obj.fields.description;
-
+            //20180710:PRAM01: added to read enviroment from jira
+  			var orgEnv = app.adapter.getOrgEnv(obj.fields.customfield_12900.value);
+            if(orgEnv.length!=1){
+                alert('Enviorment or Org '+obj.fields.customfield_12900.value+' not defined in Copado');
+                return;
+            }
+			us[app.conf.ns+'Environment__c']=orgEnv[0].copado__Environment__c;
+            us[app.conf.ns+'Org_Credential__c']=orgEnv[0].Id;
             return us;
 
         }else{
             return false;
         }
-    }    
-
+    }
 };
 
 /**************************************************************************************************************

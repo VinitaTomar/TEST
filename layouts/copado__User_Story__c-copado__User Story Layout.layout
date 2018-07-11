@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customButtons>Create_Commit_From_Jira</customButtons>
     <customButtons>copado__Static_Code_Analysis_Summary</customButtons>
     <customButtons>copado__Run_Static_Code_Analysis</customButtons>
     <customButtons>copado__Run_Compliance_Scan</customButtons>
@@ -558,7 +559,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0Y0000012Iet</masterLabel>
+        <masterLabel>00h0N00000XbSBD</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
