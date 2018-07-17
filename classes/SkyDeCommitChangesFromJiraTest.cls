@@ -1,24 +1,12 @@
-/**
-* This class contains unit tests for validating the behavior of Apex classes
-* and triggers.
-*
-* Unit tests are class methods that verify whether a particular piece
-* of code is working properly. Unit test methods take no arguments,
-* commit no data to the database, and are flagged with the testMethod
-* keyword in the method definition.
-*
-* All test methods in an organization are executed whenever Apex code is deployed
-* to a production organization to confirm correctness, ensure code
-* coverage, and prevent regressions. All Apex classes are
-* required to have at least 75% code coverage in order to be deployed
-* to a production organization. In addition, all triggers must have some code coverage.
-* 
-* The @isTest class annotation indicates this class only contains test
-* methods. Classes defined with the @isTest annotation do not count against
-* the organization size limit for all Apex scripts.
-*
-* See the Apex Language Reference for more information about Testing and Code Coverage.
-*/
+/*------------------------------------------------------------
+Author: Stefano Pramparo
+Company: Sky Deutschland
+Description: test case class to verify copado/jira integration
+1 - deserializeTest() deserialize description field from jira
+2- jiraIntegrationTest simulate integration with jira
+History
+20180717 PRAM01 Initial creation
+------------------------------------------------------------*/
 @isTest
 private class SkyDeCommitChangesFromJiraTest {    
     static copado__User_Story__c buildData(){
@@ -59,11 +47,9 @@ private class SkyDeCommitChangesFromJiraTest {
         copado__User_Story__c userStory= buildData();
         Test.startTest();
         Test.setMock(HttpCalloutMock.class,new SkyDeCommitChangesFromJiraHttpMockup());
-        SkyDeCommitChangesFromJira.createCommitChange(userStory);
-        List<HTTPResponse> responseList =SkyDeCommitChangesFromJira.getCopadoResponse();
-        for(HTTPResponse response : responseList){
-            System.assertEquals(200,response.getStatusCode());
-        }
+        SkyDeCommitChangesFromJira.createCommitChange(userStory.Id);
+        HTTPResponse response =SkyDeCommitChangesFromJira.getCopadoResponse();
+        System.assertEquals(200,response.getStatusCode());
         Test.stopTest();
     }
 }

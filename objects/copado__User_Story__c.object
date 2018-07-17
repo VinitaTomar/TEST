@@ -5847,10 +5847,9 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
         <masterLabel>Create Commit From Jira</masterLabel>
         <openType>onClickJavaScript</openType>
         <protected>false</protected>
-        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/42.0/connection.js&quot;)}
-{!REQUIRESCRIPT(&quot;/soap/ajax/42.0/apex.js&quot;)}
-var story = sforce.sObject(&quot;copado__User_Story__c&quot;);
-sforce.apex.execute(&quot;SkyDeCommitChangesFromJira&quot;,&quot;createCommitChange&quot;,{userStory:story});</url>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)}
+sforce.apex.execute(&quot;SkyDeCommitChangesFromJira&quot;,&quot;createCommitChange&quot;,{userStoryId:&quot;{!copado__User_Story__c.Id}&quot;});</url>
     </webLinks>
     <webLinks>
         <fullName>copado__Add_Apex_Tests</fullName>
