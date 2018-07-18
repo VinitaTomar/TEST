@@ -1018,6 +1018,11 @@
     </listViews>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
     <recordTypes>
+        <fullName>LiveMessage</fullName>
+        <active>true</active>
+        <label>LiveMessage</label>
+    </recordTypes>
+    <recordTypes>
         <fullName>vlocity_cmt__Billing</fullName>
         <active>true</active>
         <description>Use a billing account to add an alternate billing profile to a business account, consumer account or billing aggregator account.</description>

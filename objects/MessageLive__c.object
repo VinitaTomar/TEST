@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Ending_Line__c</fullName>
+        <externalId>false</externalId>
+        <label>Ending Line</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LiveMessageNumber__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>LiveMessage Number</label>
+        <referenceTo>LiveText__LiveText_Number__c</referenceTo>
+        <relationshipLabel>MessageLives</relationshipLabel>
+        <relationshipName>MessageLives</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Message_Retry__c</fullName>
+        <externalId>false</externalId>
+        <label>Message Retry</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Message__c</fullName>
+        <externalId>false</externalId>
+        <label>Message</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Starting_Line__c</fullName>
+        <externalId>false</externalId>
+        <label>Starting Line</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>First Message</fullName>
+                    <default>false</default>
+                    <label>First Message</label>
+                </value>
+                <value>
+                    <fullName>Second Message</fullName>
+                    <default>false</default>
+                    <label>Second Message</label>
+                </value>
+                <value>
+                    <fullName>Third Message</fullName>
+                    <default>false</default>
+                    <label>Third Message</label>
+                </value>
+                <value>
+                    <fullName>Fourth Message</fullName>
+                    <default>false</default>
+                    <label>Fourth Message</label>
+                </value>
+                <value>
+                    <fullName>Customer Message</fullName>
+                    <default>false</default>
+                    <label>Customer Message</label>
+                </value>
+                <value>
+                    <fullName>Options Message</fullName>
+                    <default>false</default>
+                    <label>Options Message</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>MessageLive</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Type__c</columns>
+        <columns>Active__c</columns>
+        <columns>Message__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Ending_Line__c</columns>
+        <columns>Starting_Line__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>ML-{0}</displayFormat>
+        <label>Message Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>MessageLives</pluralLabel>
+    <recordTypes>
+        <fullName>DefaultCustomerMessage</fullName>
+        <active>true</active>
+        <label>DefaultCustomerMessage</label>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Customer Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fourth Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Options Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Third Message</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DefaultOptionMessage</fullName>
+        <active>true</active>
+        <label>DefaultOptionMessage</label>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Customer Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fourth Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Options Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Third Message</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>MessageCustomCustomerMessage</fullName>
+        <active>true</active>
+        <label>MessageCustomCustomerMessage</label>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Customer Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fourth Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Options Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Third Message</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>MessageCustomOptionMessage</fullName>
+        <active>true</active>
+        <label>MessageCustomOptionMessage</label>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Customer Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fourth Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Options Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Third Message</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>
