@@ -185,14 +185,14 @@ global with sharing class SkyDeCommitChangesFromJira {
     Returns: 
     History 
     20180717 PRAM01 Initial creation 
+    20180718 PRAM01 add return message
     ------------------------------------------------------------*/
-    webservice  static void createCommitChange(Id userStoryId){
+    webservice  static String createCommitChange(Id userStoryId){
         System.debug('userstory id '+userStoryId);
         copado__User_Story__c userStory = [select Id,copado__Project__c,Name,External_Id__c from copado__User_Story__c where Id=:userStoryId];
         List<Object> jiraSubTasks=getJiraSubTask(userStory);        
         if(jiraSubTasks.isEmpty()){
-            System.debug('No subtask found');
-            return;
+            return 'No subtask found';
         }
         for(Object myJiraTask : jiraSubTasks) {
             Map<String,Object> i = (Map<String, Object>)myJiraTask;
@@ -200,12 +200,12 @@ global with sharing class SkyDeCommitChangesFromJira {
             String description=(String)(( Map<String,Object>)i.get('fields')).get('description');            
             System.debug('description: '+description);
             if(description.length()==0){
-                System.debug('description empty');                
-                return;
+                return 'description empty';                
             }
             copadoResponse= invokeCopadoHeroku(userStory.Name,parseDesscription(description));
             closeJiraIssue((String)i.get('key'), copadoResponse.getBody(),jiraAuthorizationHeader,jiraCredential.Endpoint__c);     
-        }        
+        }  
+        return copadoResponse.getBody();   
     }
      /*------------------------------------------------------------ 
 	Author: Stefano Pramparo

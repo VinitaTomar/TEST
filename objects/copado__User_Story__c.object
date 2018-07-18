@@ -5849,7 +5849,8 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
         <protected>false</protected>
         <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
 {!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)}
-sforce.apex.execute(&quot;SkyDeCommitChangesFromJira&quot;,&quot;createCommitChange&quot;,{userStoryId:&quot;{!copado__User_Story__c.Id}&quot;});</url>
+var result = sforce.apex.execute(&quot;SkyDeCommitChangesFromJira&quot;,&quot;createCommitChange&quot;,{userStoryId:&quot;{!copado__User_Story__c.Id}&quot;});
+alert(result);</url>
     </webLinks>
     <webLinks>
         <fullName>copado__Add_Apex_Tests</fullName>
