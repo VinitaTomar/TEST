@@ -5840,6 +5840,19 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
     </validationRules>
     <visibility>Public</visibility>
     <webLinks>
+        <fullName>Create_Commit_From_Jira</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create Commit From Jira</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)}
+var result = sforce.apex.execute(&quot;SkyDeCommitChangesFromJira&quot;,&quot;createCommitChange&quot;,{userStoryId:&quot;{!copado__User_Story__c.Id}&quot;});
+alert(result);</url>
+    </webLinks>
+    <webLinks>
         <fullName>copado__Add_Apex_Tests</fullName>
         <availability>online</availability>
         <displayType>button</displayType>
