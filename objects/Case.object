@@ -231,6 +231,19 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>LastAgent__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Last Agent</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Cases1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>MilestoneStatus</fullName>
         <trackTrending>false</trackTrending>
     </fields>
@@ -331,11 +344,33 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>SupportOption__c</fullName>
+        <externalId>false</externalId>
+        <label>SupportOption</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Type</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>WaitingForCustomer__c</fullName>
+        <externalId>false</externalId>
+        <label>WaitingForCustomer</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
     </fields>
     <fields>
         <fullName>vlocity_cmt__Amount__c</fullName>
