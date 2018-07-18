@@ -559,6 +559,12 @@
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
     <recordTypeTrackHistory>true</recordTypeTrackHistory>
     <recordTypes>
+        <fullName>LiveMessage</fullName>
+        <active>true</active>
+        <businessProcess>LiveMessage</businessProcess>
+        <label>LiveMessage</label>
+    </recordTypes>
+    <recordTypes>
         <fullName>vlocity_cmt__Billing</fullName>
         <active>true</active>
         <businessProcess>vlocity_cmt__Billing</businessProcess>
