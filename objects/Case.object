@@ -57,6 +57,22 @@
         <type>Default</type>
     </actionOverrides>
     <businessProcesses>
+        <fullName>LiveMessage</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Waiting for Customer</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
         <fullName>vlocity_cmt__Billing</fullName>
         <description>There is a complaint about billing. This has to do with money.</description>
         <isActive>true</isActive>
@@ -558,6 +574,12 @@
     </listViews>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
     <recordTypeTrackHistory>true</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>LiveMessage</fullName>
+        <active>true</active>
+        <businessProcess>LiveMessage</businessProcess>
+        <label>LiveMessage</label>
+    </recordTypes>
     <recordTypes>
         <fullName>vlocity_cmt__Billing</fullName>
         <active>true</active>
