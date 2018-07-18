@@ -1237,6 +1237,11 @@
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
     <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <recordTypes>
+        <fullName>LiveMessage</fullName>
+        <active>true</active>
+        <label>LiveMessage</label>
+    </recordTypes>
+    <recordTypes>
         <fullName>vlocity_cmt__MobilePhoneContact</fullName>
         <active>true</active>
         <label>MobilePhoneContact</label>
