@@ -333,6 +333,13 @@
         <visibleLines>3</visibleLines>
     </fields>
     <label>ITR Message</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
     <nameField>
         <label>ITR Message Name</label>
         <type>Text</type>
