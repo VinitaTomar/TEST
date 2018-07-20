@@ -170,13 +170,15 @@
             <objectName>Case</objectName>
         </pushNotifications>
         <pushNotifications>
+            <fieldNames>LastMessageReceived__c</fieldNames>
+            <fieldNames>LiveText__Contact__c</fieldNames>
             <fieldNames>LiveText__Status__c</fieldNames>
             <objectName>LiveText__Conversation_Header__c</objectName>
         </pushNotifications>
     </consoleConfig>
     <defaultLandingTab>standard-home</defaultLandingTab>
     <isServiceCloudConsole>true</isServiceCloudConsole>
-    <label>Service Console with LiveMessanger</label>
+    <label>Service Console with LiveMessang</label>
     <preferences>
         <enableCustomizeMyTabs>false</enableCustomizeMyTabs>
         <enableKeyboardShortcuts>true</enableKeyboardShortcuts>
