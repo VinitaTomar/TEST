@@ -64,6 +64,39 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
+        <fullName>CaseOption__c</fullName>
+        <externalId>false</externalId>
+        <formula>LiveText__Case__r.SupportOption__c</formula>
+        <label>CaseOption</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LastMessageReceived__c</fullName>
+        <description>Tracks The Last Message Received From the Customer</description>
+        <externalId>false</externalId>
+        <label>LastMessageReceived</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LiveText_LastAgent__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>LastAgent</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>LiveMessage_Sessions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>LiveText__AcceptedBy__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
@@ -799,29 +832,44 @@ Difference calculated in days.&quot;</description>
     </fields>
     <label>LiveMessage Session</label>
     <listViews>
-        <fullName>LiveText__All_Text_Sessions</fullName>
-        <columns>NAME</columns>
-        <columns>LiveText__Originating_Number__c</columns>
-        <columns>LiveText__LiveText_Number__c</columns>
-        <columns>LiveText__Status__c</columns>
-        <columns>CREATED_DATE</columns>
-        <filterScope>Everything</filterScope>
-        <label>All Text Sessions</label>
+        <fullName>Care_Service_Conversation_Header</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Care Service</label>
+        <queue>Care_Service</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <listViews>
-        <fullName>LiveText__My_Active_Text_Sessions</fullName>
+        <fullName>Care_Technics_Conversation_Header</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Care Technics</label>
+        <queue>Care_Technics</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>LiveMessageLv2_Conversation_Header</fullName>
+        <filterScope>Queue</filterScope>
+        <label>LiveMessageLv2</label>
+        <queue>LiveMessageLv2</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>LiveMessage_Conversation_Header</fullName>
         <columns>NAME</columns>
-        <columns>LiveText__Originating_Number__c</columns>
-        <columns>LiveText__LiveText_Number__c</columns>
-        <columns>LiveText__Status__c</columns>
-        <columns>CREATED_DATE</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>LiveText__Status__c</field>
-            <operation>equals</operation>
-            <value>Active</value>
-        </filters>
-        <label>My Active Text Sessions</label>
+        <columns>LiveText__AcceptedBy__c</columns>
+        <columns>LiveText__Account__c</columns>
+        <columns>LiveText__Contact__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>LiveMessageLv1</label>
+        <language>en_US</language>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <listViews>
         <fullName>LiveText__My_Ended_Text_Sessions</fullName>
@@ -842,6 +890,42 @@ Difference calculated in days.&quot;</description>
             <value>LiveText__Conversation_Header__c.LiveText__Ended_Text_Sessions</value>
         </filters>
         <label>My Ended Text Sessions</label>
+    </listViews>
+    <listViews>
+        <fullName>Retention_Service_Conversation_Header</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Retention Service</label>
+        <queue>Retention_Service</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Retention_Technics_Conversation_Header</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Retention Technics</label>
+        <queue>Retention_Technics</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>X2nd_Level_Service_Conversation_Header</fullName>
+        <filterScope>Queue</filterScope>
+        <label>2nd Level Service</label>
+        <queue>X2nd_Level_Service</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>X2nd_Level_Technics_Conversation_Header</fullName>
+        <filterScope>Queue</filterScope>
+        <label>2nd Level Technics</label>
+        <queue>X2nd_Level_Technics</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <nameField>
         <displayFormat>CH-{0000}</displayFormat>
