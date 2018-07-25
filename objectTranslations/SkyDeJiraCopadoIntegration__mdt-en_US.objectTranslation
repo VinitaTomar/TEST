@@ -9,11 +9,11 @@
         <value>SkyDeJiraCopadoIntegration</value>
     </caseValues>
     <fields>
-        <label><!-- Key --></label>
+        <label></label>
         <name>Key__c</name>
     </fields>
     <fields>
-        <label><!-- URL --></label>
+        <label></label>
         <name>URL__c</name>
     </fields>
     <startsWith>Consonant</startsWith>
